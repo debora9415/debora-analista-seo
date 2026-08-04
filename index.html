@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Débora Machado — Designer Estrategista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B0B0E;
+    --surface: #17151C;
+    --surface-2: #1F1C26;
+    --pink: #FF2E7A;
+    --pink-soft: #FF7BB0;
+    --ink: #F4F2F6;
+    --muted: #9A96A3;
+    --line: #2A2732;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Poppins', sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  .mono{ font-family:'JetBrains Mono', monospace; letter-spacing:0.02em; }
+  .display{ font-family:'Poppins', sans-serif; font-weight:600; }
+
+  header{
+    position:sticky; top:0; z-index:20;
+    display:flex; justify-content:space-between; align-items:center;
+    padding: 22px 6vw;
+    background: rgba(11,11,14,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo{ font-family:'Poppins'; font-weight:700; font-size:1.1rem; letter-spacing:-0.02em; }
+  .logo span{ color: var(--pink); }
+  nav{ display:flex; gap:2.2rem; }
+  nav a{
+    color: var(--muted); text-decoration:none; font-size:0.88rem;
+    font-family:'JetBrains Mono'; text-transform:uppercase; letter-spacing:0.06em;
+    transition: color .2s;
+  }
+  nav a:hover{ color: var(--ink); }
+  .cta-btn{
+    background: var(--pink); color:#0B0B0E; font-weight:600;
+    padding: 10px 20px; border-radius: 999px; text-decoration:none;
+    font-size:0.85rem; font-family:'Poppins';
+    box-shadow: 0 0 0 rgba(255,46,122,0); transition: box-shadow .25s, transform .2s;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .cta-btn:hover{ box-shadow: 0 0 24px rgba(255,46,122,0.45); transform: translateY(-1px); }
+  .cta-btn svg{ width:16px; height:16px; flex-shrink:0; }
+
+  /* HERO */
+  .hero{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem;
+    align-items:center; min-height: 88vh;
+    padding: 4vw 6vw; position:relative;
+  }
+  .hero::before{
+    content:''; position:absolute; top:-20%; right:10%; width:520px; height:520px;
+    background: radial-gradient(circle, rgba(255,46,122,0.16), transparent 70%);
+    filter: blur(20px); z-index:0;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono'; font-size:0.78rem; color: var(--pink-soft);
+    text-transform:uppercase; letter-spacing:0.12em; margin-bottom:1.4rem;
+  }
+  .eyebrow::before{ content:''; width:6px; height:6px; background: var(--pink); border-radius:50%; }
+  h1{
+    font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+    line-height:1.05; letter-spacing:-0.02em; font-weight:700;
+    margin-bottom:1.3rem; position:relative; z-index:1;
+  }
+  h1 em{ font-style:normal; color: var(--pink); }
+  .hero p.sub{
+    color: var(--muted); font-size:1.08rem; max-width: 46ch; margin-bottom:2.1rem;
+    position:relative; z-index:1;
+  }
+  .hero-actions{ display:flex; gap:1rem; align-items:center; position:relative; z-index:1; }
+  .ghost-btn{
+    color: var(--ink); text-decoration:none; font-size:0.9rem;
+    border-bottom:1px solid var(--line); padding-bottom:3px;
+  }
+
+  /* Dashboard signature card */
+  .dash-wrap{ position:relative; z-index:1; }
+  .dash-card{
+    background: linear-gradient(160deg, var(--surface), var(--surface-2));
+    border: 1px solid var(--line); border-radius: 20px;
+    padding: 1.6rem; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+  }
+  .dash-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; }
+  .dash-top .tag{ font-family:'JetBrains Mono'; font-size:0.72rem; color:var(--muted); }
+  .dash-dot{ width:8px; height:8px; border-radius:50%; background:#3EE08A; box-shadow:0 0 8px #3EE08A; }
+  .metric-row{ display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-bottom:1rem; }
+  .metric{
+    background: rgba(255,255,255,0.03); border:1px solid var(--line);
+    border-radius:12px; padding:0.9rem 1rem;
+  }
+  .metric .label{ font-family:'JetBrains Mono'; font-size:0.68rem; color:var(--muted); text-transform:uppercase; }
+  .metric .val{ font-family:'Poppins'; font-weight:700; font-size:1.5rem; margin-top:0.2rem; }
+  .metric .val.up{ color:#3EE08A; }
+  .metric .val.up::before{ content:'▲ '; font-size:0.8rem; }
+  .bars{ display:flex; align-items:flex-end; gap:6px; height:70px; margin-top:0.4rem; }
+  .bars i{ flex:1; background: linear-gradient(180deg, var(--pink), rgba(255,46,122,0.15)); border-radius:3px 3px 0 0; }
+
+  section{ padding: 6rem 6vw; }
+  .section-head{ margin: 0 auto 2.6rem; max-width: 60ch; text-align:center; }
+  .section-head .eyebrow{ margin-bottom:0.8rem; justify-content:center; }
+  .section-head h2{ font-size: clamp(1.6rem,2.6vw,2.2rem); letter-spacing:-0.01em; }
+  .section-head p{ color:var(--muted); margin-top:0.8rem; }
+
+  /* Services */
+  .services{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.4rem; }
+  .service-card{
+    background: var(--surface); border:1px solid var(--line); border-radius:18px;
+    padding: 1.8rem; position:relative; overflow:hidden;
+  }
+  .service-card::after{
+    content: attr(data-n); position:absolute; top:1.2rem; right:1.4rem;
+    font-family:'JetBrains Mono'; font-size:0.75rem; color: var(--line);
+  }
+  .service-card h3{ font-family:'Poppins'; font-weight:600; font-size:1.15rem; margin-bottom:0.7rem; }
+  .service-card p{ color:var(--muted); font-size:0.94rem; }
+  .service-card .pill{
+    display:inline-block; margin-top:1.1rem; font-family:'JetBrains Mono'; font-size:0.72rem;
+    color: var(--pink-soft); border:1px solid rgba(255,46,122,0.35); padding:4px 10px; border-radius:999px;
+  }
+
+  /* Case cards */
+  .case-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.2rem; }
+  .case-card{
+    background: var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+  }
+  .case-thumb{ height:170px; background: linear-gradient(135deg, #232030, #171522); position:relative; }
+  .case-thumb .plat{
+    position:absolute; top:12px; left:12px; font-family:'JetBrains Mono'; font-size:0.68rem;
+    background: rgba(0,0,0,0.5); padding:4px 8px; border-radius:6px; color: var(--pink-soft);
+  }
+  .case-body{ padding:1.1rem 1.2rem 1.3rem; }
+  .case-body .client{ font-family:'Poppins'; font-weight:600; font-size:1rem; margin-bottom:0.5rem; }
+  .case-meta{ display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.7rem; }
+  .case-meta span{
+    font-family:'JetBrains Mono'; font-size:0.68rem; color:var(--muted);
+    border:1px solid var(--line); padding:3px 8px; border-radius:6px;
+  }
+
+  /* Logos marquee */
+  .logos-section{ padding: 3.2rem 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .logos-section .section-head{ padding: 0 6vw; margin-bottom:2.2rem; }
+  .marquee{
+    position:relative; overflow:hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .marquee-track{
+    display:flex; align-items:center; gap:4.5rem; width:max-content;
+    animation: scroll-logos 26s linear infinite;
+  }
+  .marquee:hover .marquee-track{ animation-play-state: paused; }
+  .logo-item{
+    display:flex; align-items:center; justify-content:center;
+    height:34px; filter:grayscale(1) brightness(0) invert(1); opacity:0.75;
+    transition: opacity .2s;
+  }
+  .logo-item:hover{ opacity:1; }
+  .logo-item img{ height:100%; width:auto; object-fit:contain; }
+  @keyframes scroll-logos{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  /* Time */
+  .team-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:1.4rem; }
+  .team-card{
+    background: var(--surface); border:1px solid var(--line); border-radius:18px;
+    padding: 1.8rem 1.6rem 2rem; text-align:center; position:relative; overflow:hidden;
+    transition: border-color .2s, transform .2s;
+  }
+  .team-card:hover{ border-color: rgba(255,46,122,0.4); transform: translateY(-3px); }
+  .team-avatar{
+    width:72px; height:72px; border-radius:50%; margin:0 auto 1.1rem;
+    display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(150deg, var(--pink), #7A1E45);
+    font-family:'Poppins'; font-weight:700; font-size:1.3rem; color:#0B0B0E;
+  }
+  .team-card h3{ font-family:'Poppins'; font-weight:600; font-size:1.05rem; margin-bottom:0.3rem; }
+  .team-card .role{
+    font-family:'JetBrains Mono'; font-size:0.72rem; color: var(--pink-soft);
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.8rem; display:block;
+  }
+  .team-card p{ color:var(--muted); font-size:0.88rem; }
+  .team-note{
+    display:flex; align-items:center; justify-content:center; gap:0.6rem;
+    margin-top:2.6rem; color:var(--muted); font-family:'JetBrains Mono'; font-size:0.8rem;
+    text-align:center;
+  }
+  .team-note .avatars-mini{ display:flex; }
+  .team-note .avatars-mini span{
+    width:22px; height:22px; border-radius:50%; background: var(--pink);
+    border:2px solid var(--bg); margin-left:-8px; display:inline-block;
+  }
+  .team-note .avatars-mini span:first-child{ margin-left:0; }
+
+  /* CTA footer */
+  .cta-final{
+    text-align:center; padding: 7rem 6vw; position:relative;
+  }
+  .cta-final h2{ font-size: clamp(1.8rem,4vw,2.8rem); max-width:20ch; margin:0 auto 1.2rem; }
+  .cta-final p{ color:var(--muted); margin-bottom:2rem; }
+
+  footer{ padding:2rem 6vw; border-top:1px solid var(--line); display:flex; justify-content:space-between; color:var(--muted); font-size:0.82rem; font-family:'JetBrains Mono'; }
+
+  @media (max-width: 880px){
+    .hero{ grid-template-columns:1fr; min-height:auto; padding-top:2rem; }
+    .services, .case-grid{ grid-template-columns:1fr; }
+    .team-grid{ grid-template-columns: repeat(2,1fr); }
+    nav{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DÉBORA<span>.</span></div>
+  <nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#time">Time</a>
+    <a href="#criativos">Criativos</a>
+    <a href="#empresas">Empresas</a>
+  </nav>
+  <a class="cta-btn" href="#contato">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02-.2 0-.51.07-.78.37-.26.29-1.02.99-1.02 2.42s1.05 2.81 1.2 3.01c.15.2 2.06 3.15 5 4.41.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.13-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.9.52 3.68 1.44 5.2L2 22l4.94-1.39c1.47.8 3.15 1.26 4.94 1.26h.01c5.52 0 10-4.48 10-10S17.54 2 12.02 2zm0 18.15h-.01c-1.6 0-3.16-.43-4.52-1.24l-.32-.19-3.35.94.9-3.27-.21-.34a8.15 8.15 0 0 1-1.25-4.36c0-4.51 3.67-8.18 8.19-8.18a8.13 8.13 0 0 1 8.18 8.18c0 4.51-3.67 8.18-8.18 8.18z"/></svg>
+    Falar no WhatsApp
+  </a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow mono">Designer estrategista · mídia paga</div>
+    <h1 class="display">Criativos e landing pages que <em>performam</em>, não só que ficam bonitos.</h1>
+    <p class="sub">Ajudo gestores de tráfego e agências de performance a transformar análise de campanha em criativos que convertem — estáticos, vídeos e páginas orientadas por dado, não só por estética.</p>
+    <div class="hero-actions">
+      <a class="cta-btn" href="#contato">Quero criativos que convertem →</a>
+      <a class="ghost-btn" href="#criativos">Ver cases</a>
+    </div>
+  </div>
+
+  <div class="dash-wrap">
+    <div class="dash-card">
+      <div class="dash-top">
+        <span class="tag">campanha_ativa.json</span>
+        <div class="dash-dot"></div>
+      </div>
+      <div class="metric-row">
+        <div class="metric">
+          <div class="label">CTR</div>
+          <div class="val up" data-count-to="3.8" data-suffix="%" data-decimals="1">0%</div>
+        </div>
+        <div class="metric">
+          <div class="label">CPA</div>
+          <div class="val up" data-count-to="-24" data-suffix="%" data-decimals="0">0%</div>
+        </div>
+      </div>
+      <div class="metric">
+        <div class="label mono">Variações testadas / semana</div>
+        <div class="bars">
+          <i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i>
+          <i style="height:85%"></i><i style="height:70%"></i><i style="height:95%"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="section-head">
+    <div class="eyebrow mono">O que eu entrego</div>
+    <h2 class="display">Três frentes, um único objetivo: <span style="color:var(--pink);">performance</span></h2>
+  </div>
+  <div class="services">
+    <div class="service-card" data-n="01">
+      <h3>Criativos para Mídia Paga</h3>
+      <p>Estáticos e vídeos para Meta Ads, Google Ads e TikTok Ads. Variações pensadas para teste A/B, com foco em CTR e redução de CPA.</p>
+      <span class="pill">Estático · Vídeo · Motion</span>
+    </div>
+    <div class="service-card" data-n="02">
+      <h3>Landing Pages de Conversão</h3>
+      <p>Páginas rápidas e objetivas, estruturadas para o funil da campanha — do clique ao lead ou venda, alinhadas com boas práticas de SEO técnico.</p>
+      <span class="pill">Funil · SEO técnico</span>
+    </div>
+    <div class="service-card" data-n="03">
+      <h3>Estratégia & Copy orientados por dado</h3>
+      <p>Análise de público e de campanhas anteriores para embasar cada peça — direção de arte e copy pensados para o objetivo do gestor, não só para "ficar bonito".</p>
+      <span class="pill">Análise · Copy</span>
+    </div>
+  </div>
+</section>
+
+<section id="time">
+  <div class="section-head">
+    <div class="eyebrow mono">Quem faz acontecer</div>
+    <h2 class="display">Por trás de cada campanha, um time completo</h2>
+    <p>Nenhuma peça sai da estratégia direto pro ar sozinha — passa por redação, direção de arte, vídeo e gestão de projeto antes de chegar até você.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">M</div>
+      <h3>Maíra</h3>
+      <span class="role">Redatora</span>
+      <p>Escreve a copy que sustenta cada criativo e landing page, alinhada à estratégia de cada campanha.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">F</div>
+      <h3>Felipe</h3>
+      <span class="role">Designer</span>
+      <p>Traduz dado e estratégia em direção de arte — dos estáticos às landing pages.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">J</div>
+      <h3>Jair</h3>
+      <span class="role">Vídeo</span>
+      <p>Roteiriza, filma e edita os criativos em vídeo pensados para reter atenção nos primeiros segundos.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">G</div>
+      <h3>Gizele</h3>
+      <span class="role">Gestão de Projetos & CS</span>
+      <p>Organiza prazos, alinha entregas e garante que a comunicação com você seja clara do briefing à entrega.</p>
+    </div>
+  </div>
+  <div class="team-note">
+    <div class="avatars-mini"><span></span><span></span><span></span><span></span></div>
+    <span>Débora lidera a estratégia — mas cada entrega passa por esse time.</span>
+  </div>
+</section>
+
+<section id="criativos">
+  <div class="section-head">
+    <div class="eyebrow mono">Cases</div>
+    <h2 class="display">Criativos com contexto, não só galeria</h2>
+    <p>Cada peça mostra objetivo, plataforma e abordagem — substitua pelas imagens reais dos seus criativos.</p>
+  </div>
+  <div class="case-grid">
+    <div class="case-card">
+      <div class="case-thumb"><span class="plat">Meta Ads</span></div>
+      <div class="case-body">
+        <div class="client">Clínica Medeiros</div>
+        <p style="color:var(--muted); font-size:0.9rem;">Geração de leads para transplante capilar.</p>
+        <div class="case-meta"><span>Estático</span><span>Geração de leads</span></div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-thumb"><span class="plat">Google Ads</span></div>
+      <div class="case-body">
+        <div class="client">RRM Estruturas</div>
+        <p style="color:var(--muted); font-size:0.9rem;">Landing page para orçamento de estruturas metálicas.</p>
+        <div class="case-meta"><span>Landing page</span><span>Conversão</span></div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-thumb"><span class="plat">Meta Ads</span></div>
+      <div class="case-body">
+        <div class="client">Ditosa Cortinas</div>
+        <p style="color:var(--muted); font-size:0.9rem;">Página de orçamento sob medida.</p>
+        <div class="case-meta"><span>Landing page</span><span>Orçamento</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="empresas" class="logos-section">
+  <div class="section-head">
+    <div class="eyebrow mono">Confiam no meu trabalho</div>
+    <h2 class="display">Empresas e agências que já performaram comigo</h2>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="logo-item"><img src="logos/v4-company.svg" alt="V4 Company"></div>
+      <div class="logo-item"><img src="logos/apetrus.svg" alt="Apetrus"></div>
+      <div class="logo-item"><img src="logos/megafone-digital.svg" alt="Megafone Digital"></div>
+      <div class="logo-item"><img src="logos/logap-ti.svg" alt="Logap I.T."></div>
+      <div class="logo-item"><img src="logos/recorde-pessoal.svg" alt="Recorde Pessoal"></div>
+      <!-- duplicado para o loop infinito ficar contínuo -->
+      <div class="logo-item"><img src="logos/v4-company.svg" alt="V4 Company"></div>
+      <div class="logo-item"><img src="logos/apetrus.svg" alt="Apetrus"></div>
+      <div class="logo-item"><img src="logos/megafone-digital.svg" alt="Megafone Digital"></div>
+      <div class="logo-item"><img src="logos/logap-ti.svg" alt="Logap I.T."></div>
+      <div class="logo-item"><img src="logos/recorde-pessoal.svg" alt="Recorde Pessoal"></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="contato">
+  <div class="eyebrow mono" style="justify-content:center;">Vamos conversar</div>
+  <h2 class="display">Precisa de criativos e landing pages que convertem de verdade?</h2>
+  <p>Vamos analisar sua campanha atual e ver onde dá pra melhorar performance.</p>
+  <a class="cta-btn" href="#" style="padding:14px 28px; font-size:0.95rem;">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02-.2 0-.51.07-.78.37-.26.29-1.02.99-1.02 2.42s1.05 2.81 1.2 3.01c.15.2 2.06 3.15 5 4.41.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.13-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.9.52 3.68 1.44 5.2L2 22l4.94-1.39c1.47.8 3.15 1.26 4.94 1.26h.01c5.52 0 10-4.48 10-10S17.54 2 12.02 2zm0 18.15h-.01c-1.6 0-3.16-.43-4.52-1.24l-.32-.19-3.35.94.9-3.27-.21-.34a8.15 8.15 0 0 1-1.25-4.36c0-4.51 3.67-8.18 8.19-8.18a8.13 8.13 0 0 1 8.18 8.18c0 4.51-3.67 8.18-8.18 8.18z"/></svg>
+    Falar no WhatsApp →
+  </a>
+</section>
+
+<footer>
+  <span>© DÉBORA MACHADO</span>
+  <span>DESIGNER ESTRATEGISTA · MÍDIA PAGA</span>
+</footer>
+
+<script>
+  (function(){
+    const counters = document.querySelectorAll('[data-count-to]');
+    if(!counters.length) return;
+
+    function animateCounter(el){
+      const target = parseFloat(el.getAttribute('data-count-to'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      const duration = 1400;
+      const start = performance.now();
+
+      function tick(now){
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const current = target * eased;
+        el.textContent = current.toFixed(decimals) + suffix;
+        if(progress < 1){
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target.toFixed(decimals) + suffix;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach(el => observer.observe(el));
+  })();
+</script>
+
+</body>
+</html>
