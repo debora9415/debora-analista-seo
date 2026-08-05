@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Débora Machado — Designer Estrategista</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #0B0B0E;
@@ -16,17 +16,18 @@
     --ink: #F4F2F6;
     --muted: #9A96A3;
     --line: #2A2732;
+    --green: #3EE08A;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height:1.5;
     overflow-x:hidden;
   }
   .mono{ font-family:'JetBrains Mono', monospace; letter-spacing:0.02em; }
-  .display{ font-family:'Poppins', sans-serif; font-weight:600; }
+  .display{ font-family:'Montserrat', sans-serif; font-weight:600; }
 
   header{
     position:sticky; top:0; z-index:20;
@@ -36,26 +37,25 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
-  .logo{ font-family:'Poppins'; font-weight:700; font-size:1.1rem; letter-spacing:-0.02em; }
+  .logo{ font-family:'Montserrat'; font-weight:700; font-size:1.1rem; letter-spacing:-0.02em; }
   .logo span{ color: var(--pink); }
-  nav{ display:flex; gap:2.2rem; }
+  nav{ display:flex; gap:2rem; }
   nav a{
-    color: var(--muted); text-decoration:none; font-size:0.88rem;
-    font-family:'JetBrains Mono'; text-transform:uppercase; letter-spacing:0.06em;
+    color: var(--muted); text-decoration:none; font-size:0.84rem;
+    font-family:'JetBrains Mono'; text-transform:uppercase; letter-spacing:0.05em;
     transition: color .2s;
   }
   nav a:hover{ color: var(--ink); }
   .cta-btn{
     background: var(--pink); color:#0B0B0E; font-weight:600;
     padding: 10px 20px; border-radius: 999px; text-decoration:none;
-    font-size:0.85rem; font-family:'Poppins';
+    font-size:0.85rem; font-family:'Montserrat';
     box-shadow: 0 0 0 rgba(255,46,122,0); transition: box-shadow .25s, transform .2s;
     display:inline-flex; align-items:center; gap:8px;
   }
   .cta-btn:hover{ box-shadow: 0 0 24px rgba(255,46,122,0.45); transform: translateY(-1px); }
   .cta-btn svg{ width:16px; height:16px; flex-shrink:0; }
 
-  /* HERO */
   .hero{
     display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem;
     align-items:center; min-height: 88vh;
@@ -88,7 +88,6 @@
     border-bottom:1px solid var(--line); padding-bottom:3px;
   }
 
-  /* Dashboard signature card */
   .dash-wrap{ position:relative; z-index:1; }
   .dash-card{
     background: linear-gradient(160deg, var(--surface), var(--surface-2));
@@ -97,15 +96,15 @@
   }
   .dash-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; }
   .dash-top .tag{ font-family:'JetBrains Mono'; font-size:0.72rem; color:var(--muted); }
-  .dash-dot{ width:8px; height:8px; border-radius:50%; background:#3EE08A; box-shadow:0 0 8px #3EE08A; }
+  .dash-dot{ width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 8px var(--green); }
   .metric-row{ display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-bottom:1rem; }
   .metric{
     background: rgba(255,255,255,0.03); border:1px solid var(--line);
     border-radius:12px; padding:0.9rem 1rem;
   }
   .metric .label{ font-family:'JetBrains Mono'; font-size:0.68rem; color:var(--muted); text-transform:uppercase; }
-  .metric .val{ font-family:'Poppins'; font-weight:700; font-size:1.5rem; margin-top:0.2rem; }
-  .metric .val.up{ color:#3EE08A; }
+  .metric .val{ font-family:'Montserrat'; font-weight:700; font-size:1.5rem; margin-top:0.2rem; }
+  .metric .val.up{ color: var(--green); }
   .metric .val.up::before{ content:'▲ '; font-size:0.8rem; }
   .bars{ display:flex; align-items:flex-end; gap:6px; height:70px; margin-top:0.4rem; }
   .bars i{ flex:1; background: linear-gradient(180deg, var(--pink), rgba(255,46,122,0.15)); border-radius:3px 3px 0 0; }
@@ -116,7 +115,6 @@
   .section-head h2{ font-size: clamp(1.6rem,2.6vw,2.2rem); letter-spacing:-0.01em; }
   .section-head p{ color:var(--muted); margin-top:0.8rem; }
 
-  /* Services */
   .services{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.4rem; }
   .service-card{
     background: var(--surface); border:1px solid var(--line); border-radius:18px;
@@ -126,32 +124,91 @@
     content: attr(data-n); position:absolute; top:1.2rem; right:1.4rem;
     font-family:'JetBrains Mono'; font-size:0.75rem; color: var(--line);
   }
-  .service-card h3{ font-family:'Poppins'; font-weight:600; font-size:1.15rem; margin-bottom:0.7rem; }
+  .service-card h3{ font-family:'Montserrat'; font-weight:600; font-size:1.15rem; margin-bottom:0.7rem; }
   .service-card p{ color:var(--muted); font-size:0.94rem; }
   .service-card .pill{
     display:inline-block; margin-top:1.1rem; font-family:'JetBrains Mono'; font-size:0.72rem;
     color: var(--pink-soft); border:1px solid rgba(255,46,122,0.35); padding:4px 10px; border-radius:999px;
   }
 
-  /* Case cards */
-  .case-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.2rem; }
-  .case-card{
-    background: var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+  .audience-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:1.4rem; }
+  .audience-card{
+    background: var(--surface); border:1px solid var(--line); border-radius:18px;
+    padding: 2.2rem; position:relative;
   }
+  .audience-card .tag-label{
+    font-family:'JetBrains Mono'; font-size:0.72rem; color: var(--pink-soft);
+    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.9rem; display:block;
+  }
+  .audience-card h3{ font-family:'Montserrat'; font-weight:600; font-size:1.3rem; margin-bottom:0.8rem; }
+  .audience-card p{ color:var(--muted); font-size:0.96rem; }
+
+  .scope-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:1.4rem; }
+  .scope-card{ border-radius:18px; padding: 2rem; border:1px solid var(--line); }
+  .scope-card.yes{ background: linear-gradient(160deg, rgba(255,46,122,0.08), var(--surface)); }
+  .scope-card.no{ background: var(--surface); opacity:0.85; }
+  .scope-card h3{ font-family:'Montserrat'; font-weight:600; font-size:1.05rem; margin-bottom:1.1rem; }
+  .scope-card.yes h3{ color: var(--pink-soft); }
+  .scope-card ul{ list-style:none; display:flex; flex-direction:column; gap:0.7rem; }
+  .scope-card li{ display:flex; align-items:center; gap:0.6rem; color: var(--ink); font-size:0.94rem; }
+  .scope-card.no li{ color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line); }
+  .scope-card li::before{ font-family:'JetBrains Mono'; font-size:0.85rem; }
+  .scope-card.yes li::before{ content:'✓'; color: var(--green); }
+  .scope-card.no li::before{ content:'✕'; color: var(--muted); text-decoration:none; }
+
+  .pricing-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.4rem; align-items:stretch; }
+  .price-card{
+    background: var(--surface); border:1px solid var(--line); border-radius:20px;
+    padding: 2rem 1.8rem; display:flex; flex-direction:column;
+  }
+  .price-card.featured{
+    border-color: var(--pink); background: linear-gradient(165deg, rgba(255,46,122,0.1), var(--surface));
+    transform: translateY(-8px); box-shadow: 0 20px 50px -20px rgba(255,46,122,0.35);
+  }
+  .price-card .plan-name{ display:flex; align-items:center; gap:0.5rem; font-family:'Montserrat'; font-weight:700; font-size:1.15rem; margin-bottom:0.4rem; }
+  .price-card .plan-tag{ color: var(--muted); font-size:0.85rem; margin-bottom:1.4rem; }
+  .price-card .price{ font-family:'Montserrat'; font-weight:800; font-size:2.1rem; margin-bottom:1.6rem; }
+  .price-card ul{ list-style:none; display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.8rem; flex:1; }
+  .price-card li{ display:flex; align-items:flex-start; gap:0.6rem; font-size:0.92rem; color: var(--ink); }
+  .price-card li::before{ content:'✓'; color: var(--green); font-family:'JetBrains Mono'; flex-shrink:0; }
+  .price-card .cta-btn{ justify-content:center; width:100%; }
+  .price-card:not(.featured) .cta-btn{ background: transparent; border:1px solid var(--line); color: var(--ink); }
+  .addon-note{
+    text-align:center; margin-top:2rem; color: var(--muted); font-size:0.92rem;
+    font-family:'JetBrains Mono';
+  }
+  .addon-note strong{ color: var(--ink); font-family:'Montserrat'; }
+
+  .timeline{ display:flex; flex-direction:column; align-items:center; max-width:520px; margin:0 auto; }
+  .tl-step{
+    display:flex; align-items:center; gap:1.2rem; width:100%;
+    background: var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding: 1.1rem 1.4rem;
+  }
+  .tl-num{
+    flex-shrink:0; width:38px; height:38px; border-radius:50%;
+    background: linear-gradient(150deg, var(--pink), #7A1E45);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Montserrat'; font-weight:700; color:#0B0B0E; font-size:0.95rem;
+  }
+  .tl-step h4{ font-family:'Montserrat'; font-weight:600; font-size:1rem; }
+  .tl-arrow{ color: var(--pink-soft); font-family:'JetBrains Mono'; padding: 0.5rem 0; font-size:1.1rem; }
+
+  .case-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.2rem; }
+  .case-card{ background: var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
   .case-thumb{ height:170px; background: linear-gradient(135deg, #232030, #171522); position:relative; }
   .case-thumb .plat{
     position:absolute; top:12px; left:12px; font-family:'JetBrains Mono'; font-size:0.68rem;
     background: rgba(0,0,0,0.5); padding:4px 8px; border-radius:6px; color: var(--pink-soft);
   }
   .case-body{ padding:1.1rem 1.2rem 1.3rem; }
-  .case-body .client{ font-family:'Poppins'; font-weight:600; font-size:1rem; margin-bottom:0.5rem; }
+  .case-body .client{ font-family:'Montserrat'; font-weight:600; font-size:1rem; margin-bottom:0.5rem; }
   .case-meta{ display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.7rem; }
   .case-meta span{
     font-family:'JetBrains Mono'; font-size:0.68rem; color:var(--muted);
     border:1px solid var(--line); padding:3px 8px; border-radius:6px;
   }
 
-  /* Logos marquee */
   .logos-section{ padding: 3.2rem 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .logos-section .section-head{ padding: 0 6vw; margin-bottom:2.2rem; }
   .marquee{
@@ -159,10 +216,7 @@
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
             mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
-  .marquee-track{
-    display:flex; align-items:center; gap:4.5rem; width:max-content;
-    animation: scroll-logos 26s linear infinite;
-  }
+  .marquee-track{ display:flex; align-items:center; gap:4.5rem; width:max-content; animation: scroll-logos 26s linear infinite; }
   .marquee:hover .marquee-track{ animation-play-state: paused; }
   .logo-item{
     display:flex; align-items:center; justify-content:center;
@@ -171,47 +225,9 @@
   }
   .logo-item:hover{ opacity:1; }
   .logo-item img{ height:100%; width:auto; object-fit:contain; }
-  @keyframes scroll-logos{
-    from{ transform: translateX(0); }
-    to{ transform: translateX(-50%); }
-  }
+  @keyframes scroll-logos{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
-  /* Time */
-  .team-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:1.4rem; }
-  .team-card{
-    background: var(--surface); border:1px solid var(--line); border-radius:18px;
-    padding: 1.8rem 1.6rem 2rem; text-align:center; position:relative; overflow:hidden;
-    transition: border-color .2s, transform .2s;
-  }
-  .team-card:hover{ border-color: rgba(255,46,122,0.4); transform: translateY(-3px); }
-  .team-avatar{
-    width:72px; height:72px; border-radius:50%; margin:0 auto 1.1rem;
-    display:flex; align-items:center; justify-content:center;
-    background: linear-gradient(150deg, var(--pink), #7A1E45);
-    font-family:'Poppins'; font-weight:700; font-size:1.3rem; color:#0B0B0E;
-  }
-  .team-card h3{ font-family:'Poppins'; font-weight:600; font-size:1.05rem; margin-bottom:0.3rem; }
-  .team-card .role{
-    font-family:'JetBrains Mono'; font-size:0.72rem; color: var(--pink-soft);
-    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.8rem; display:block;
-  }
-  .team-card p{ color:var(--muted); font-size:0.88rem; }
-  .team-note{
-    display:flex; align-items:center; justify-content:center; gap:0.6rem;
-    margin-top:2.6rem; color:var(--muted); font-family:'JetBrains Mono'; font-size:0.8rem;
-    text-align:center;
-  }
-  .team-note .avatars-mini{ display:flex; }
-  .team-note .avatars-mini span{
-    width:22px; height:22px; border-radius:50%; background: var(--pink);
-    border:2px solid var(--bg); margin-left:-8px; display:inline-block;
-  }
-  .team-note .avatars-mini span:first-child{ margin-left:0; }
-
-  /* CTA footer */
-  .cta-final{
-    text-align:center; padding: 7rem 6vw; position:relative;
-  }
+  .cta-final{ text-align:center; padding: 7rem 6vw; position:relative; }
   .cta-final h2{ font-size: clamp(1.8rem,4vw,2.8rem); max-width:20ch; margin:0 auto 1.2rem; }
   .cta-final p{ color:var(--muted); margin-bottom:2rem; }
 
@@ -219,8 +235,8 @@
 
   @media (max-width: 880px){
     .hero{ grid-template-columns:1fr; min-height:auto; padding-top:2rem; }
-    .services, .case-grid{ grid-template-columns:1fr; }
-    .team-grid{ grid-template-columns: repeat(2,1fr); }
+    .services, .case-grid, .pricing-grid, .audience-grid, .scope-grid{ grid-template-columns:1fr; }
+    .price-card.featured{ transform:none; }
     nav{ display:none; }
   }
 </style>
@@ -231,7 +247,7 @@
   <div class="logo">DÉBORA<span>.</span></div>
   <nav>
     <a href="#servicos">Serviços</a>
-    <a href="#time">Time</a>
+    <a href="#pacotes">Pacotes</a>
     <a href="#criativos">Criativos</a>
     <a href="#empresas">Empresas</a>
   </nav>
@@ -243,8 +259,8 @@
 
 <section class="hero">
   <div>
-    <div class="eyebrow mono">Designer estrategista </div>
-    <h1 class="display">Criativos e landing pages que <em>performam</em> </h1>
+    <div class="eyebrow mono">Designer estrategista</div>
+    <h1 class="display">Criativos e landing pages que <em>performam</em></h1>
     <p class="sub">Ajudo gestores de tráfego e empresas a transformar análise de campanha em criativos que convertem. Estáticos, vídeos e páginas orientadas por dado, não só por estética.</p>
     <div class="hero-actions">
       <a class="cta-btn" href="#contato">Quero criativos que convertem →</a>
@@ -303,6 +319,124 @@
   </div>
 </section>
 
+<section id="para-quem">
+  <div class="section-head">
+    <div class="eyebrow mono">Para quem é</div>
+    <h2 class="display">Feito pra quem vive dentro da campanha</h2>
+  </div>
+  <div class="audience-grid">
+    <div class="audience-card">
+      <span class="tag-label">Gestores de tráfego</span>
+      <h3>Fôlego criativo pra manter a campanha viva</h3>
+      <p>Você já sabe qual anúncio precisa rodar e qual público testar — mas não tem tempo (nem time) pra produzir criativo novo na velocidade que a campanha exige. Eu assumo a produção pra você focar na estratégia de mídia, sem a campanha travar por falta de peça nova.</p>
+    </div>
+    <div class="audience-card">
+      <span class="tag-label">Agências de performance</span>
+      <h3>Time de criação sem o custo de time fixo</h3>
+      <p>Montar estrutura interna de design encarece a operação e trava com a demanda variando de mês pra mês. Terceirizar comigo sai mais em conta do que manter um time fixo, sem abrir mão de prazo, padrão de qualidade e entendimento do briefing de mídia.</p>
+    </div>
+  </div>
+</section>
+
+<section id="escopo">
+  <div class="section-head">
+    <div class="eyebrow mono">Escopo</div>
+    <h2 class="display">O que eu faço — e o que eu não faço</h2>
+  </div>
+  <div class="scope-grid">
+    <div class="scope-card yes">
+      <h3>O que eu faço</h3>
+      <ul>
+        <li>Criativos estáticos e em vídeo para mídia paga</li>
+        <li>Landing pages de conversão para campanha</li>
+        <li>Estratégia criativa orientada por dado</li>
+        <li>Variações para teste A/B</li>
+      </ul>
+    </div>
+    <div class="scope-card no">
+      <h3>O que eu não faço</h3>
+      <ul>
+        <li>Gestão de social mídia (orgânico)</li>
+        <li>Sites institucionais</li>
+        <li>Branding e identidade visual completa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="pacotes">
+  <div class="section-head">
+    <div class="eyebrow mono">Pacotes</div>
+    <h2 class="display">Escolha o fôlego criativo que a sua campanha precisa</h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-tag">Pra testar o fluxo</div>
+      <div class="price">R$ 790</div>
+      <ul>
+        <li>5 criativos</li>
+        <li>1 conceito criativo</li>
+        <li>2 revisões</li>
+      </ul>
+      <a class="cta-btn" href="#contato">Solicitar orçamento</a>
+    </div>
+    <div class="price-card featured">
+      <div class="plan-name">Growth ⭐</div>
+      <div class="plan-tag">Mais escolhido</div>
+      <div class="price">R$ 1.590</div>
+      <ul>
+        <li>10 criativos</li>
+        <li>3 conceitos criativos</li>
+        <li>Pesquisa de concorrentes</li>
+        <li>Biblioteca de anúncios</li>
+        <li>Variações A/B</li>
+      </ul>
+      <a class="cta-btn" href="#contato">Solicitar orçamento</a>
+    </div>
+    <div class="price-card">
+      <div class="plan-name">Scale</div>
+      <div class="plan-tag">Campanha em escala</div>
+      <div class="price">R$ 4.500</div>
+      <ul>
+        <li>15 criativos</li>
+        <li>5 vídeos</li>
+        <li>1 Landing Page</li>
+      </ul>
+      <a class="cta-btn" href="#contato">Solicitar orçamento</a>
+    </div>
+  </div>
+  <p class="addon-note">Precisa só da página? <strong>Landing page avulsa</strong> sob consulta — <a href="#contato" style="color:var(--pink-soft);">fale comigo</a>.</p>
+</section>
+
+<section id="processo">
+  <div class="section-head">
+    <div class="eyebrow mono">Como funciona</div>
+    <h2 class="display">Da ideia à entrega, passo a passo</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-step"><div class="tl-num">01</div><h4>Briefing</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">02</div><h4>Pesquisa</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">03</div><h4>Moodboard</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">04</div><h4>Estratégia Criativa</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">05</div><h4>Aprovação</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">06</div><h4>Landing Page</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">07</div><h4>Criativos</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">08</div><h4>Revisão</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">09</div><h4>Entrega</h4></div>
+    <div class="tl-arrow">↓</div>
+    <div class="tl-step"><div class="tl-num">10</div><h4>Arquivos Finais</h4></div>
+  </div>
+</section>
+
 <section id="criativos">
   <div class="section-head">
     <div class="eyebrow mono">Cases</div>
@@ -349,7 +483,6 @@
       <div class="logo-item"><img src="logos/megafone-digital.svg" alt="Megafone Digital"></div>
       <div class="logo-item"><img src="logos/logap-ti.svg" alt="Logap I.T."></div>
       <div class="logo-item"><img src="logos/recorde-pessoal.svg" alt="Recorde Pessoal"></div>
-      <!-- duplicado para o loop infinito ficar contínuo -->
       <div class="logo-item"><img src="logos/v4-company.svg" alt="V4 Company"></div>
       <div class="logo-item"><img src="logos/apetrus.svg" alt="Apetrus"></div>
       <div class="logo-item"><img src="logos/megafone-digital.svg" alt="Megafone Digital"></div>
@@ -370,7 +503,7 @@
 </section>
 
 <footer>
-  <span>© UM TIME COMPLETO</span>
+  <span>© DÉBORA MACHADO</span>
   <span>DESIGNER ESTRATEGISTA · MÍDIA PAGA</span>
 </footer>
 
@@ -388,7 +521,7 @@
 
       function tick(now){
         const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
         const current = target * eased;
         el.textContent = current.toFixed(decimals) + suffix;
         if(progress < 1){
