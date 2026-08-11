@@ -18,7 +18,7 @@
     --line: #2A2732;
     --green: #3EE08A;
     --whatsapp: #25D366;
-    --behance: #FF7BB0;
+    --behance: #FF2E7A;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
@@ -145,6 +145,17 @@
   .tool-chip{ display:flex; align-items:center; gap:0.55rem; background: var(--surface); border:1px solid var(--line); border-radius:999px; padding:0.5rem 1rem 0.5rem 0.5rem; }
   .tool-chip .tool-ico{ width:28px; height:28px; border-radius:50%; flex-shrink:0; background: linear-gradient(150deg, var(--pink), #7A1E45); display:flex; align-items:center; justify-content:center; font-family:'Montserrat'; font-weight:700; font-size:0.68rem; color:#0B0B0E; }
   .tool-chip .tool-name{ font-family:'Montserrat'; font-size:0.85rem; color:var(--ink); white-space:nowrap; }
+  .tool-ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.tool-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
 
   .services{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.4rem; }
   .service-card{
@@ -343,18 +354,73 @@
     <h2 class="display">Três frentes, um único objetivo: <span style="color:var(--pink);">performance das suas campanhas</span></h2>
   </div>
 
-  <div class="tools-wrap">
+<div class="tools-wrap">
     <div class="tools-label mono">Ferramentas que eu utilizo</div>
     <div class="tools-grid">
-      <div class="tool-chip"><span class="tool-ico">CC</span><span class="tool-name">Pacote Adobe </span></div>
-      <div class="tool-chip"><span class="tool-ico">Fg</span><span class="tool-name">Figma</span></div>
-      <div class="tool-chip"><span class="tool-ico">Wp</span><span class="tool-name">WordPress</span></div>
-      <div class="tool-chip"><span class="tool-ico">El</span><span class="tool-name">Elementor</span></div>
-      <div class="tool-chip"><span class="tool-ico">Wf</span><span class="tool-name">Webflow</span></div>
-      <div class="tool-chip"><span class="tool-ico">Ub</span><span class="tool-name">Unbounce</span></div>
-      <div class="tool-chip"><span class="tool-ico">&lt;/&gt;</span><span class="tool-name">HTML &amp; CSS</span></div>
-      <div class="tool-chip"><span class="tool-ico">Cp</span><span class="tool-name">CapCut</span></div>
-      <div class="tool-chip"><span class="tool-ico">Cv</span><span class="tool-name">Canva</span></div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/adobe" alt="Adobe" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>CC</span>
+        </span>
+        <span class="tool-name">Pacote Adobe </span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/figma" alt="Figma" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>Fg</span>
+        </span>
+        <span class="tool-name">Figma</span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/wordpress" alt="WordPress" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>Wp</span>
+        </span>
+        <span class="tool-name">WordPress</span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/elementor" alt="Elementor" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>El</span>
+        </span>
+        <span class="tool-name">Elementor</span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/webflow" alt="Webflow" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>Wf</span>
+        </span>
+        <span class="tool-name">Webflow</span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/unbounce" alt="Unbounce" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>Ub</span>
+        </span>
+        <span class="tool-name">Unbounce</span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/html5" alt="HTML5" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/css3" alt="CSS3" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>&lt;/&gt;</span>
+        </span>
+        <span class="tool-name">HTML &amp; CSS</span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/capcut" alt="CapCut" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>Cp</span>
+        </span>
+        <span class="tool-name">CapCut</span>
+      </div>
+      <div class="tool-chip">
+        <span class="tool-ico">
+          <img class="tool-logo" src="https://cdn.simpleicons.org/canva" alt="Canva" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()">
+          <span>Cv</span>
+        </span>
+        <span class="tool-name">Canva</span>
+      </div>
     </div>
   </div>
 
