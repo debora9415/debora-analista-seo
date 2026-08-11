@@ -17,6 +17,8 @@
     --muted: #9A96A3;
     --line: #2A2732;
     --green: #3EE08A;
+    --whatsapp: #25D366;
+    --behance: #1769FF;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
@@ -47,13 +49,13 @@
   }
   nav a:hover{ color: var(--ink); }
   .cta-btn{
-    background: var(--pink); color:#0B0B0E; font-weight:600;
+    background: var(--whatsapp); color:#0B0B0E; font-weight:600;
     padding: 10px 20px; border-radius: 999px; text-decoration:none;
     font-size:0.85rem; font-family:'Montserrat';
-    box-shadow: 0 0 0 rgba(255,46,122,0); transition: box-shadow .25s, transform .2s;
+    box-shadow: 0 0 0 rgba(37,211,102,0); transition: box-shadow .25s, transform .2s;
     display:inline-flex; align-items:center; gap:8px;
   }
-  .cta-btn:hover{ box-shadow: 0 0 24px rgba(255,46,122,0.45); transform: translateY(-1px); }
+  .cta-btn:hover{ box-shadow: 0 0 24px rgba(37,211,102,0.45); transform: translateY(-1px); }
   .cta-btn svg{ width:16px; height:16px; flex-shrink:0; }
 
   .hero{
@@ -86,6 +88,28 @@
   .ghost-btn{
     color: var(--ink); text-decoration:none; font-size:0.9rem;
     border-bottom:1px solid var(--line); padding-bottom:3px;
+  }
+  .outline-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    color: var(--ink); text-decoration:none; font-size:0.85rem;
+    font-family:'Montserrat'; font-weight:600;
+    padding: 10px 22px; border-radius:999px;
+    border:1px solid rgba(244,242,246,0.5);
+    transition: border-color .2s, background .2s, transform .2s;
+  }
+  .outline-btn:hover{ border-color: var(--ink); background: rgba(255,255,255,0.05); transform: translateY(-1px); }
+  .behance-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background: var(--behance); color:#fff; font-weight:600;
+    padding: 10px 20px 10px 10px; border-radius: 999px; text-decoration:none;
+    font-size:0.85rem; font-family:'Montserrat';
+    box-shadow: 0 0 0 rgba(23,105,255,0); transition: box-shadow .25s, transform .2s;
+  }
+  .behance-btn:hover{ box-shadow: 0 0 24px rgba(23,105,255,0.45); transform: translateY(-1px); }
+  .behance-mark{
+    font-family:'Montserrat'; font-weight:800; font-size:0.8rem; color:#fff;
+    background: rgba(255,255,255,0.18); width:24px; height:24px; border-radius:7px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
   }
 
   .dash-wrap{ position:relative; z-index:1; }
@@ -243,12 +267,12 @@
   .wa-float{
     position:fixed; bottom:24px; right:24px; z-index:50;
     width:58px; height:58px; border-radius:50%;
-    background: var(--pink); color:#0B0B0E;
+    background: var(--whatsapp); color:#fff;
     display:flex; align-items:center; justify-content:center;
-    box-shadow: 0 8px 24px rgba(255,46,122,0.45);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.45);
     transition: transform .2s, box-shadow .2s;
   }
-  .wa-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(255,46,122,0.6); }
+  .wa-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(37,211,102,0.6); }
   .wa-float svg{ width:28px; height:28px; }
 
   @media (max-width: 880px){
@@ -269,7 +293,7 @@
     <a href="#criativos">Criativos</a>
     <a href="#empresas">Empresas</a>
   </nav>
-  <a class="cta-btn" href="#contato">
+  <a class="cta-btn" href="https://wa.me/5584991132489" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02-.2 0-.51.07-.78.37-.26.29-1.02.99-1.02 2.42s1.05 2.81 1.2 3.01c.15.2 2.06 3.15 5 4.41.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.13-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.9.52 3.68 1.44 5.2L2 22l4.94-1.39c1.47.8 3.15 1.26 4.94 1.26h.01c5.52 0 10-4.48 10-10S17.54 2 12.02 2zm0 18.15h-.01c-1.6 0-3.16-.43-4.52-1.24l-.32-.19-3.35.94.9-3.27-.21-.34a8.15 8.15 0 0 1-1.25-4.36c0-4.51 3.67-8.18 8.19-8.18a8.13 8.13 0 0 1 8.18 8.18c0 4.51-3.67 8.18-8.18 8.18z"/></svg>
     Falar no WhatsApp
   </a>
@@ -281,8 +305,8 @@
     <h1 class="display">Criativos e landing pages que <em>performam</em></h1>
     <p class="sub">Ajudo gestores de tráfego e empresas a transformar análise de campanha em criativos que convertem. Estáticos, vídeos e páginas orientadas por dado, não só por estética.</p>
     <div class="hero-actions">
-      <a class="ghost-btn" href="https://www.linkedin.com/in/d%C3%A9bora-m-722411142/" target="_blank" rel="noopener">LinkedIn →</a>
-      <a class="ghost-btn" href="https://www.behance.net/agenciaonda/projects" target="_blank" rel="noopener">Ver Behance →</a>
+      <a class="outline-btn" href="https://www.linkedin.com/in/d%C3%A9bora-m-722411142/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="behance-btn" href="https://www.behance.net/agenciaonda/projects" target="_blank" rel="noopener"><span class="behance-mark">Bē</span> Ver Behance</a>
     </div>
   </div>
 
@@ -403,7 +427,7 @@
     <div class="eyebrow mono">Cases</div>
     <h2 class="display">Criativos com contexto, não só galeria</h2>
     <p>Cada peça mostra objetivo, plataforma e abordagem — substitua pelas imagens reais dos seus criativos.</p>
-    <a class="ghost-btn" href="https://www.behance.net/agenciaonda/projects" target="_blank" rel="noopener" style="display:inline-block; margin-top:1rem;">Veja mais no meu BE →</a>
+    <a class="behance-btn" href="https://www.behance.net/agenciaonda/projects" target="_blank" rel="noopener" style="display:inline-flex; margin-top:1rem;"><span class="behance-mark">Bē</span> Veja mais no meu Behance</a>
   </div>
   <div class="case-grid">
     <div class="case-card">
@@ -440,17 +464,16 @@
   </div>
   <div class="marquee">
     <div class="marquee-track" id="marqueeTrack">
-      <div class="logo-item"><img src="logos/v4-company.svg" alt="V4 Company"></div>
-      <div class="logo-item"><img src="logos/apetrus.svg" alt="Apetrus"></div>
-      <div class="logo-item"><img src="logos/megafone-digital.svg" alt="Megafone Digital"></div>
-      <div class="logo-item"><img src="logos/logap-ti.svg" alt="Logap I.T."></div>
-      <div class="logo-item"><img src="logos/recorde-pessoal.svg" alt="Recorde Pessoal"></div>
-      <div class="logo-item"><img src="logos/v4-company.svg" alt="V4 Company"></div>
-      <div class="logo-item"><img src="logos/apetrus.svg" alt="Apetrus"></div>
-      <div class="logo-item"><img src="logos/megafone-digital.svg" alt="Megafone Digital"></div>
-      <div class="logo-item"><img src="logos/logap-ti.svg" alt="Logap I.T."></div>
-      <div class="logo-item"><img src="logos/recorde-pessoal.svg" alt="Recorde Pessoal"></div>
-    </div>
+      <div class="logo-item"><img src="v4company.png" alt="V4 Company"></div>
+      <div class="logo-item"><img src="1.png" alt="Apetrus"></div>
+      <div class="logo-item"><img src="2.png" alt="Logap I.T."></div>
+      <div class="logo-item"><img src="v4company.png" alt="V4 Company"></div>
+      <div class="logo-item"><img src="1.png" alt="Apetrus"></div>
+      <div class="logo-item"><img src="2.png" alt="Logap I.T."></div>
+      <div class="logo-item"><img src="v4company.png" alt="V4 Company"></div>
+      <div class="logo-item"><img src="1.png" alt="Apetrus"></div>
+      <div class="logo-item"><img src="2.png" alt="Logap I.T."></div>
+     
   </div>
 </section>
 
@@ -458,7 +481,7 @@
   <div class="eyebrow mono" style="justify-content:center;">Vamos conversar</div>
   <h2 class="display">Precisa de criativos e landing pages que convertem de verdade?</h2>
   <p>Vamos analisar sua campanha atual e ver onde dá pra melhorar performance.</p>
-  <a class="cta-btn" href="#" style="padding:14px 28px; font-size:0.95rem;">
+  <a class="cta-btn" href="https://wa.me/5584991132489" target="_blank" rel="noopener" style="padding:14px 28px; font-size:0.95rem;">
     <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02-.2 0-.51.07-.78.37-.26.29-1.02.99-1.02 2.42s1.05 2.81 1.2 3.01c.15.2 2.06 3.15 5 4.41.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.13-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.9.52 3.68 1.44 5.2L2 22l4.94-1.39c1.47.8 3.15 1.26 4.94 1.26h.01c5.52 0 10-4.48 10-10S17.54 2 12.02 2zm0 18.15h-.01c-1.6 0-3.16-.43-4.52-1.24l-.32-.19-3.35.94.9-3.27-.21-.34a8.15 8.15 0 0 1-1.25-4.36c0-4.51 3.67-8.18 8.19-8.18a8.13 8.13 0 0 1 8.18 8.18c0 4.51-3.67 8.18-8.18 8.18z"/></svg>
     Falar no WhatsApp →
   </a>
@@ -469,7 +492,7 @@
   <span>DESIGNER ESTRATEGISTA · MÍDIA PAGA</span>
 </footer>
 
-<a class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="wa-float" href="https://wa.me/5584991132489" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02-.2 0-.51.07-.78.37-.26.29-1.02.99-1.02 2.42s1.05 2.81 1.2 3.01c.15.2 2.06 3.15 5 4.41.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.13-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.9.52 3.68 1.44 5.2L2 22l4.94-1.39c1.47.8 3.15 1.26 4.94 1.26h.01c5.52 0 10-4.48 10-10S17.54 2 12.02 2zm0 18.15h-.01c-1.6 0-3.16-.43-4.52-1.24l-.32-.19-3.35.94.9-3.27-.21-.34a8.15 8.15 0 0 1-1.25-4.36c0-4.51 3.67-8.18 8.19-8.18a8.13 8.13 0 0 1 8.18 8.18c0 4.51-3.67 8.18-8.18 8.18z"/></svg>
 </a>
 
