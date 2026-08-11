@@ -184,6 +184,13 @@
   }
   .audience-card h3{ font-family:'Montserrat'; font-weight:600; font-size:1.3rem; margin-bottom:0.8rem; }
   .audience-card p{ color:var(--muted); font-size:0.96rem; }
+  .audience-icon{
+  width:44px; height:44px; border-radius:14px;
+  background: linear-gradient(150deg, var(--pink), #7A1E45);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:1.1rem;
+}
+.audience-icon svg{ width:22px; height:22px; stroke:#0B0B0E; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 
   .scope-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:1.4rem; }
   .scope-card{ border-radius:18px; padding: 2rem; border:1px solid var(--line); }
@@ -450,17 +457,22 @@
   </div>
   <div class="audience-grid">
     <div class="audience-card">
+      <div class="audience-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+      </div>
       <span class="tag-label">Gestores de tráfego</span>
       <h3>Fôlego criativo pra manter a campanha sempre ativa</h3>
       <p>Você já sabe qual anúncio precisa rodar e qual público testar, mas não tem tempo (nem time) pra produzir criativo novo na velocidade que a campanha exige. Eu assumo a produção pra você focar na estratégia de mídia, sem a campanha travar por falta de peça nova.</p>
     </div>
     <div class="audience-card">
+      <div class="audience-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      </div>
       <span class="tag-label">Agências de performance</span>
       <h3>Time de criação sem o custo de time fixo</h3>
       <p>Montar estrutura interna de design encarece a operação e trava com a demanda variando de mês pra mês. Terceirizar comigo sai mais em conta do que manter um time fixo, sem abrir mão de prazo, padrão de qualidade e entendimento do briefing de mídia.</p>
     </div>
   </div>
-</section>
 
 <section id="escopo">
   <div class="section-head">
