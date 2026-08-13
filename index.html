@@ -298,6 +298,22 @@
   overflow: visible;
 }
 
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  overflow: visible;
+}
+
 .whatsapp-float:hover {
   transform: scale(1.08);
 }
@@ -321,12 +337,57 @@
   border: 2px solid #fff;
 }
 
+/* Balão de fala */
+.whatsapp-bubble {
+  position: absolute;
+  right: 76px;
+  bottom: 10px;
+  background: #fff;
+  color: #1a1a1a;
+  padding: 10px 14px;
+  border-radius: 16px 16px 0 16px;
+  font-size: 14px;
+  font-family: sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  animation: bubble-pop 0.4s ease 0.6s both;
+}
+
+.whatsapp-bubble::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 8px solid #fff;
+  border-top: 8px solid transparent;
+}
+
+@keyframes bubble-pop {
+  from {
+    opacity: 0;
+    transform: translateX(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 @media (max-width: 480px) {
   .whatsapp-float {
     width: 56px;
     height: 56px;
     bottom: 16px;
     right: 16px;
+  }
+
+  .whatsapp-bubble {
+    white-space: normal;
+    max-width: 160px;
+    font-size: 12px;
+    right: 66px;
   }
 }
 
@@ -340,13 +401,15 @@
 </style>
 </head>
 <body>
-    <a href="https://wa.me/55SEUNUMEROAQUI?text=Oiee%2C%20sou%20a%20Lele%21%20Vim%20do%20site%20e%20quero%20saber%20mais" 
+   <!-- Botão flutuante WhatsApp com avatar e balão de fala -->
+<a href="https://wa.me/55SEUNUMEROAQUI?text=Oiee%2C%20sou%20a%20Lele%21%20Vim%20do%20site%20e%20quero%20saber%20mais" 
    target="_blank" 
    class="whatsapp-float"
    aria-label="Falar com a Lele no WhatsApp">
+  <span class="whatsapp-bubble">Oi, sou a Lele. Vamos conversar?</span>
   <img src="assets/lele-avatar.png" alt="Lele">
   <span class="whatsapp-status"></span>
-</a>
+</a>>
 
 <header>
   <div class="logo">PORTFOLIO<span>.</span></div>
